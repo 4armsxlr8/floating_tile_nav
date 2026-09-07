@@ -1,6 +1,6 @@
 name: floating_tile_nav
 description: "A floating bottom navigation bar with custom icons, controlled selection, and safe-area handling."
-version: 0.1.0
+version: 0.1.1
 repository: https://github.com/4armsxlr8/floating_tile_nav
 issue_tracker: https://github.com/4armsxlr8/floating_tile_nav/issues
 topics:

@@ -2,6 +2,10 @@
 
 A reusable, single-row floating bottom navigation bar for Flutter apps. Its only runtime dependency is the Flutter SDK. Your app manages the selected state and screen switching; the bar just reports the item index.
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/4armsxlr8/floating_tile_nav/main/doc/demo.gif" width="270" alt="The floating navigation bar at the bottom center of the example app, switching between the home, search, and profile screens.">
+</p>
+
 ## Using it from your app
 
 To depend on it from pub.dev, specify a version in your app's `pubspec.yaml`.

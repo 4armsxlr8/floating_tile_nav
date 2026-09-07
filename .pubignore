@@ -3,6 +3,9 @@
 # 仕様・計画・レビュー報告
 /docs/
 
+# README 用の画像 (GitHub から参照する。アーカイブには入れない)
+/doc/
+
 # 生成物
 /build/
 /coverage/

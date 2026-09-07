@@ -18,8 +18,6 @@
 /example/ios/Runner/GeneratedPluginRegistrant.*
 /example/android/app/src/main/java/io/flutter/plugins/
 
-# 前セッションで example/ へ移した旧アプリの残骸 (index に残る削除済みファイル。コミット後は不要)
-/android/
-/ios/
-/web/
-/assets/
+# 利用例の Web 用日本語フォント (9 MB)。アーカイブを軽くするため除外する。
+# GitHub の clone には残る。除外した状態の example は Web で日本語フォントが無い。
+/example/assets/fonts/

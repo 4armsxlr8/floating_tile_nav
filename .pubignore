@@ -1,0 +1,25 @@
+# pub.dev のアーカイブから除外するもの (.gitignore の代わりに使われる)。
+
+# 仕様・計画・レビュー報告
+/docs/
+
+# 生成物
+/build/
+/coverage/
+/pubspec.lock
+*.iml
+/example/build/
+/example/coverage/
+/example/android/local.properties
+/example/android/.kotlin/
+/example/ios/Flutter/ephemeral/
+/example/ios/Flutter/Generated.xcconfig
+/example/ios/Flutter/flutter_export_environment.sh
+/example/ios/Runner/GeneratedPluginRegistrant.*
+/example/android/app/src/main/java/io/flutter/plugins/
+
+# 前セッションで example/ へ移した旧アプリの残骸 (index に残る削除済みファイル。コミット後は不要)
+/android/
+/ios/
+/web/
+/assets/

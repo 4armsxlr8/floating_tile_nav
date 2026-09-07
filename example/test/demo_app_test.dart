@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:pinterest_floating_bottom_nav/src/demo_app.dart';
-import 'package:pinterest_floating_bottom_nav/src/demo_pages.dart';
+import 'package:floating_tile_nav_example/src/demo_app.dart';
+import 'package:floating_tile_nav_example/src/demo_pages.dart';
 
 const _navLabels = <String>['ホーム', '検索', 'プロフィール'];
 
@@ -17,10 +17,10 @@ List<DemoCard> _manyCards() {
 
 void main() {
   testWidgets('AC-1: 初回起動ではホームだけが選択される', (tester) async {
-    await tester.pumpWidget(PinterestDemoApp());
+    await tester.pumpWidget(FloatingTileNavDemoApp());
     await tester.pumpAndSettle();
 
-    expect(find.text('Pinterest'), findsOneWidget);
+    expect(find.text('Floating Tile Nav'), findsOneWidget);
     for (final label in _navLabels) {
       final button = _navButton(label);
       expect(button, findsOneWidget);
@@ -37,14 +37,17 @@ void main() {
   });
 
   testWidgets('AC-2: ナビタップで画面と選択状態が順番に切り替わる', (tester) async {
-    await tester.pumpWidget(PinterestDemoApp());
+    await tester.pumpWidget(FloatingTileNavDemoApp());
     await tester.pumpAndSettle();
 
     for (final target in <String>['検索', 'プロフィール', 'ホーム']) {
       await tester.tap(_navButton(target));
       await tester.pumpAndSettle();
 
-      expect(find.text(target == 'ホーム' ? 'Pinterest' : target), findsOneWidget);
+      expect(
+        find.text(target == 'ホーム' ? 'Floating Tile Nav' : target),
+        findsOneWidget,
+      );
       for (final label in _navLabels) {
         expect(
           tester.getSemantics(_navButton(label)),
@@ -59,7 +62,7 @@ void main() {
   });
 
   testWidgets('AC-3: ホームのスクロール位置をタブ往復と再タップで保持する', (tester) async {
-    await tester.pumpWidget(PinterestDemoApp(homeCards: _manyCards()));
+    await tester.pumpWidget(FloatingTileNavDemoApp(homeCards: _manyCards()));
     await tester.pumpAndSettle();
 
     final homeScrollable = find.byType(Scrollable).first;
@@ -82,7 +85,7 @@ void main() {
   });
 
   testWidgets('AC-4: 上下スクロール後もナビが固定されてタップできる', (tester) async {
-    await tester.pumpWidget(PinterestDemoApp(homeCards: _manyCards()));
+    await tester.pumpWidget(FloatingTileNavDemoApp(homeCards: _manyCards()));
     await tester.pumpAndSettle();
 
     final homeButton = _navButton('ホーム');
@@ -100,7 +103,7 @@ void main() {
   });
 
   testWidgets('AC-5: キャンセルでは選択を変えず、離した後の通常タップは切り替わる', (tester) async {
-    await tester.pumpWidget(PinterestDemoApp());
+    await tester.pumpWidget(FloatingTileNavDemoApp());
     await tester.pumpAndSettle();
 
     final searchButton = _navButton('検索');
@@ -121,7 +124,7 @@ void main() {
     await movedGesture.up();
     await tester.pumpAndSettle();
 
-    expect(find.text('Pinterest'), findsOneWidget);
+    expect(find.text('Floating Tile Nav'), findsOneWidget);
     expect(tester.getRect(searchVisual), initialVisualRect);
 
     final cancelledGesture = await tester.startGesture(
@@ -132,7 +135,7 @@ void main() {
     await cancelledGesture.cancel();
     await tester.pumpAndSettle();
 
-    expect(find.text('Pinterest'), findsOneWidget);
+    expect(find.text('Floating Tile Nav'), findsOneWidget);
     expect(tester.getRect(searchVisual), initialVisualRect);
 
     await tester.tap(searchButton);
@@ -151,7 +154,7 @@ void main() {
           ..physicalSize = Size(width, height)
           ..padding = FakeViewPadding(bottom: bottomPadding)
           ..viewPadding = FakeViewPadding(bottom: bottomPadding);
-        await tester.pumpWidget(PinterestDemoApp());
+        await tester.pumpWidget(FloatingTileNavDemoApp());
         await tester.pumpAndSettle();
 
         for (final label in _navLabels) {
@@ -166,7 +169,7 @@ void main() {
   });
 
   testWidgets('AC-7: 空一覧でも使え、多数件を末尾までスクロールできる', (tester) async {
-    await tester.pumpWidget(PinterestDemoApp(homeCards: <DemoCard>[]));
+    await tester.pumpWidget(FloatingTileNavDemoApp(homeCards: <DemoCard>[]));
     await tester.pumpAndSettle();
     expect(find.text('アイデアはまだありません'), findsOneWidget);
     await tester.tap(_navButton('検索'));
@@ -175,7 +178,7 @@ void main() {
 
     final cards = _manyCards();
     await tester.pumpWidget(
-      PinterestDemoApp(
+      FloatingTileNavDemoApp(
         key: const ValueKey<String>('many-cards'),
         homeCards: cards,
       ),
@@ -197,7 +200,7 @@ void main() {
   });
 
   testWidgets('AC-8: ナビの名前・選択状態・タップ領域を公開情報で確認できる', (tester) async {
-    await tester.pumpWidget(PinterestDemoApp());
+    await tester.pumpWidget(FloatingTileNavDemoApp());
     await tester.pumpAndSettle();
 
     for (final label in _navLabels) {

@@ -1,4 +1,4 @@
-package com.example.pinterest_floating_bottom_nav
+package com.example.floating_tile_nav_example
 
 import io.flutter.embedding.android.FlutterActivity
 

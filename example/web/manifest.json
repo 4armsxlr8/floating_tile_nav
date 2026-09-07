@@ -1,6 +1,6 @@
 {
-    "name": "pinterest_floating_bottom_nav",
-    "short_name": "pinterest_floating_bottom_nav",
+    "name": "Floating Tile Nav",
+    "short_name": "Floating Tile Nav",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

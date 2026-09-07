@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.pinterest_floating_bottom_nav"
+    namespace = "com.example.floating_tile_nav_example"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 
@@ -16,7 +16,7 @@ android {
 
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId = "com.example.pinterest_floating_bottom_nav"
+        applicationId = "com.example.floating_tile_nav_example"
         // You can update the following values to match your application needs.
         // For more information, see: https://flutter.dev/to/review-gradle-config.
         minSdk = flutter.minSdkVersion

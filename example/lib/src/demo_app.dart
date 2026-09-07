@@ -1,11 +1,11 @@
+import 'package:floating_tile_nav/floating_tile_nav.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import 'demo_pages.dart';
-import 'floating_bottom_navigation.dart';
 
-class PinterestDemoApp extends StatelessWidget {
-  const PinterestDemoApp({super.key, this.homeCards = defaultHomeCards});
+class FloatingTileNavDemoApp extends StatelessWidget {
+  const FloatingTileNavDemoApp({super.key, this.homeCards = defaultHomeCards});
 
   final List<DemoCard> homeCards;
 

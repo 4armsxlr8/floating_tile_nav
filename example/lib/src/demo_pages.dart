@@ -40,7 +40,7 @@ double _pageBottomPadding(BuildContext context) {
       _navigationContentGap;
 }
 
-/// The Pinterest-like home page with a simple two-column card layout.
+/// The home page with a simple two-column card layout.
 class HomePage extends StatelessWidget {
   const HomePage({super.key, required this.cards});
 
@@ -89,7 +89,7 @@ class _HomeHeader extends StatelessWidget {
       children: [
         const Expanded(
           child: Text(
-            'Pinterest',
+            'Floating Tile Nav',
             style: TextStyle(
               color: Colors.white,
               fontSize: 28,

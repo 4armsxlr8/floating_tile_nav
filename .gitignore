@@ -46,3 +46,15 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# Generated remnants from the former app checkout.
+/android/
+/ios/
+
+# The package root does not track a lockfile; the example app does.
+/pubspec.lock
+
+# Generated files for the example app.
+/example/.dart_tool/
+/example/build/
+/example/coverage/
